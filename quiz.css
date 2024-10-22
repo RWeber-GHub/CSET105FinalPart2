@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    width: fit-content;
+    margin: auto;
+    font-size: 50px;
+}
+.question{
+    display: none;
+}
+.questiontitle{
+    font-size: 50px;
+}
+input{
+    width: 25px;
+    height: 25px;
+}
+label{
+    font-size: 25px;
+}
