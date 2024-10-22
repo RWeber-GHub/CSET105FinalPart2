@@ -1,109 +1,120 @@
-value=0;
-var number=document.getElementsByName("number");
-let book=document.getElementsByName("book");
-let car=document.getElementsByName("car");
-let ingredient=document.getElementsByName("ingredient");
-let language=document.getElementsByName("language");
-let years=document.getElementsByName("years");
-let titles=document.getElementsByName("titles");
-let lights=document.getElementsByName("lights");
-let person=document.getElementsByName("person");
-let meaning=document.getElementsByName("meaning");
 
-function submit(){
-    switch(value){
-        case 0:
-            document.getElementById("begin").style.display="none";
-            value++;
-        case 1:
-            document.getElementById("Q1").style.display="block";
-            for(i=0;i<number.length;i++){
-                if(number[i].checked){
-                    value++;
-                }
-            }
-            break;
-        case 2:
-            document.getElementById("Q1").style.display="none";
-            document.getElementById("Q2").style.display="block";
-            for(i=0;i<book.length;i++){
-                if(book[i].checked){
-                    value++;
-                }
-            }
-            break;
-        case 3:
-            document.getElementById("Q2").style.display="none";
-            document.getElementById("Q3").style.display="block";
-            for(i=0;i<car.length;i++){
-                if(car[i].checked){
-                    value++;
-                }
-            }
-            break;
-        case 4:
-            document.getElementById("Q4").style.display="block";
-            document.getElementById("Q3").style.display="none";
-            for(i=0;i<ingredient.length;i++){
-                if(ingredient[i].checked){
-                    value++;
-                }
-            }
-            break;
-        case 5:
-            document.getElementById("Q5").style.display="block";
-            document.getElementById("Q4").style.display="none";
-            for(i=0;i<language.length;i++){
-                if(language[i].checked){
-                    value++;
-                }
-            }
-            break;
-        case 6:
-            document.getElementById("Q6").style.display="block";
-            document.getElementById("Q5").style.display="none";
-            for(i=0;i<years.length;i++){
-                if(years[i].checked){
-                    value++;
-                }
-            }
-            break;
-        case 7:
-            document.getElementById("Q7").style.display="block";
-            document.getElementById("Q6").style.display="none";
-            for(i=0;i<titles.length;i++){
-                if(titles[i].checked){
-                    value++;
-                }
-            }
-            break;
-        case 8:
-            document.getElementById("Q8").style.display="block";
-            document.getElementById("Q7").style.display="none";
-            for(i=0;i<lights.length;i++){
-                if(lights[i].checked){
-                    value++;
-                }
-            }
-            break;
-        case 9:
-            document.getElementById("Q9").style.display="block";
-            document.getElementById("Q8").style.display="none";
-            for(i=0;i<person.length;i++){
-                if(person[i].checked){
-                    value++;
-                }
-            }
-            break;
-        case 10:
-            document.getElementById("Q10").style.display="block";
-            document.getElementById("Q9").style.display="none";
-            for(i=0;i<meaning.length;i++){
-                if(meaning[i].checked){
-                    value++;
-                }
-            }
-            break;
-        default:
+const quizquestions = [
+    {
+        question: "1: What is 19+17?",
+        options: ["26", "36", "37", "29"],
+        answer: "36"
+    },
+    {
+        question: "2: What year does George Orwell's famous book use as its title?",
+        options: ["1682", "1976", "1984", "2001"],
+        answer: "1984"
+    },
+    {
+        question: "3: What is one of the leading car brands in Japan?",
+        options: ["Mazda", "Ford", "Volkswagen", "Aston Martin"],
+        answer: "Mazda"
+    },
+    {
+        question: "4: Which of these is a key ingredient in bread?",
+        options: ["Sugar", "Orange Peel", "Creatine", "Flour"],
+        answer: "Flour"
+    },
+    {
+        question: "5: What is the leading language in Paraguay?",
+        options: ["Paraguayan Guaraní", "French", "Mandarin", "Tagalog"],
+        answer: "Paraguayan Guaraní"
+    },
+    {
+        question: "6: How often does Halley's Comet pass Earth?",
+        options: ["100 years", "62 years", "74 years", "76 years"],
+        answer: "74 years"
+    },
+    {
+        question: "7: How many main titles of Call of Duty have been released?",
+        options: ["88", "51", "44", "23"],
+        answer: "23"
+    },
+    {
+        question: "8: What is the famous natural light event that happens in specific parts?",
+        options: ["The Northern Lights", "Flashing Lights by Kanye West", "Blinding Lights by The Weeknd", "All of the Lights by Kanye West"],
+        answer: "The Northern Lights"
+    },
+    {
+        question: "9: Who was the person who coined the word torque?",
+        options: ["Lyndon B. Johnson", "James Thomson", "Nikola Tesla", "Karl Ferdinand Braun"],
+        answer: "James Thomson"
+    },
+    {
+        question: "10: What does the term 'arca archa' in Latin most closely mean in English?",
+        options: ["Winged Animal", "Fruit Tree", "Container", "Green Plant"],
+        answer: "Container"
+    }
+];
+
+const questionElement = document.getElementById("question");
+const optionsElement = document.getElementById("options");
+const submitButton = document.getElementById("submit");
+let currentQuestion = 0;
+let score = 0;
+
+
+function showQuestion() {
+    const question = quizquestions[currentQuestion];
+    questionElement.innerText = question.question;
+
+    optionsElement.innerHTML = ""; 
+
+    question.options.forEach(option => {
+        const label = document.createElement("label");
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "option";
+        radio.value = option;
+
+        label.appendChild(radio);
+        label.appendChild(document.createTextNode(option));
+
+        optionsElement.appendChild(label);
+        optionsElement.appendChild(document.createElement("br"));
+    });
+}
+
+
+function selectAnswer() {
+    const selectedOption = document.querySelector('input[name="option"]:checked');
+
+    if (!selectedOption) {
+        alert("Please select an answer!");
+        return; 
+    }
+
+    const answer = quizquestions[currentQuestion].answer;
+    if (selectedOption.value === answer) {
+        score++; 
+    }
+
+    currentQuestion++;
+
+    if (currentQuestion < quizquestions.length) {
+        showQuestion(); 
+    } else {
+        showResult(); 
     }
 }
+
+
+function showResult() {
+    questionElement.innerHTML = `
+      <h1>Quiz completed</h1>
+      <p>Your score: ${score}/${quizquestions.length}</p>
+    `;
+    optionsElement.innerHTML = ""; 
+    submitButton.style.display = "none"; 
+}
+
+
+showQuestion();
+
+
+submitButton.addEventListener("click", selectAnswer);

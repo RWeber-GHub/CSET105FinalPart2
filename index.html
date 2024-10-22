@@ -1,157 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="quiz.css">
+  <title>Interactive Quiz</title>
+  <link rel="stylesheet" href="quiz.css">
 </head>
 <body>
-    <div class="top">
-        <h1>Questionnaire</h1>
-        <button id="begin" onclick="submit()">Begin</button>
-    </div>
-    <div class="question" id="Q1">
-        <div class="questiontitle">1: What is 19+17?</div>
-        <input type="radio" class="question1" name="number" value="1" id="26">
-        <label for="26">26</label><br>
-        <input type="radio" class="question1" name="number" value="0" id="36">
-        <label for="36">36</label><br>
-        <input type="radio" class="question1" name="number" value="1" id="37">
-        <label for="37">37</label><br>
-        <input type="radio" class="question1" name="number" value="1" id="29">
-        <label for="29">29</label><br>
-        <button class="submit" onclick="submit()">Submit</button>
-    </div>
+  <div id="quiz">
+    <h1>Questionare</h1>
 
-    <div class="question" id="Q2">
-        <div class="questiontitle">2: What year does George Orwells famous book use as its title?</div>
-        <input type="radio" class="question2" name="book" value="1" id="1682">
-        <label for="1682">1682</label><br>
-        <input type="radio" class="question2" name="book" value="1" id="1976">
-        <label for="1976">1976</label><br>
-        <input type="radio" class="question2" name="book" value="0" id="1984">
-        <label for="1984">1984</label><br>
-        <input type="radio" class="question2" name="book" value="1" id="2001">
-        <label for="2001">2001</label><br>
-        <button class="submit" onclick="submit()">Submit</button>
-    </div>
+    <div id="question"></div>
 
-    <div class="question" id="Q3">
-        <div class="questiontitle">3: What is one of the leading car brands in Japan?</div>
-        <input type="radio" class="question3" name="car" value="0" id="Mazda">
-        <label for="Mazda">Mazda</label><br>
-        <input type="radio" class="question3" name="car" value="1" id="Ford">
-        <label for="Ford">Ford</label><br>
-        <input type="radio" class="question3" name="car" value="1" id="Volkswagen">
-        <label for="Volkswagen">Volkswagen</label><br>
-        <input type="radio" class="question3" name="car" value="1" id="AstonMartin">
-        <label for="AstonMartin">Aston Martin</label><br>
-        <button class="submit" onclick="submit()">Submit</button>
-    </div>
+    <div id="options"></div>
+    
+    <button id="submit">Submit</button>
+  </div>
 
-    <div class="question"  id="Q4">
-        <div class="questiontitle">4: Which of these is a key ingredient in bread?</div>
-        <input type="radio" class="question4" name="ingredient" value="1" id="Sugar">
-        <label for="Sugar">Sugar</label><br>
-        <input type="radio" class="question4" name="ingredient" value="1" id="OrangePeel">
-        <label for="OrangePeel">Orange Peel</label><br>
-        <input type="radio" class="question4" name="ingredient" value="1" id="Creatine">
-        <label for="Creatine">Creatine</label><br>
-        <input type="radio" class="question4" name="ingredient" value="0" id="Flour">
-        <label for="Flour">Flour</label><br>
-        <button class="submit" onclick="submit()">Submit</button>
-    </div>
-
-    <div class="question"  id="Q5">
-        <div class="questiontitle">5: What is the leading language in Paraguay? </div>
-        <input type="radio" class="question5" name="language" value="0" id="PG">
-        <label for="PG">Paraguayan Guaraní</label><br>
-        <input type="radio" class="question5" name="language" value="1" id="French">
-        <label for="French">French</label><br>
-        <input type="radio" class="question5" name="language" value="1" id="Mandarin">
-        <label for="Mandarin">Mandarin</label><br>
-        <input type="radio" class="question5" name="language" value="1" id="Tagalog">
-        <label for="Tagalog">Tagalog</label><br>
-        <button class="submit" onclick="submit()">Submit</button>
-    </div>
-
-    <div class="question"  id="Q6">
-        <div class="questiontitle">6: How often does Halleys Comet Pass earth?</div>
-        <input type="radio" class="question6" name="years" value="1" id="100">
-        <label for="100">100 years</label><br>
-        <input type="radio" class="question6" name="years" value="1" id="62">
-        <label for="62">62 years</label><br>
-        <input type="radio" class="question6" name="years" value="0" id="74">
-        <label for="74">74 years</label><br>
-        <input type="radio" class="question6" name="years" value="1" id="76">
-        <label for="76">76 years</label><br>
-        <button class="submit" onclick="submit()">Submit</button>
-    </div>
-
-    <div class="question"  id="Q7">
-        <div class="questiontitle">7: How many main titles of Call of Duty have been released?</div>
-        <input type="radio" class="question7" name="titles" value="1" id="88">
-        <label for="88">88</label><br>
-        <input type="radio" class="question7" name="titles" value="1" id="51">
-        <label for="51">51</label><br>
-        <input type="radio" class="question7" name="titles" value="1" id="44">
-        <label for="44">44</label><br>
-        <input type="radio" class="question7" name="titles" value="0" id="23">
-        <label for="23">23</label><br>
-        <button class="submit" onclick="submit()">Submit</button>
-    </div>
-
-    <div class="question"  id="Q8">
-        <div class="questiontitle">8: What is the famous natural light event that happens in specific parts </div>
-        <input type="radio" class="question8" name="lights" value="0" id="TNL">
-        <label for="TNL">The Northern lights</label><br>
-        <input type="radio" class="question8" name="lights" value="1" id="FL">
-        <label for="FL">Flashing Lights by Kanye West</label><br>
-        <input type="radio" class="question8" name="lights" value="1" id="BL">
-        <label for="BL">Blinding Lights by The Weeknd</label><br>
-        <input type="radio" class="question8" name="lights" value="1" id="AOTL">
-        <label for="AOTL">All Of the Lights By Kanye West</label><br>
-        <button class="submit" onclick="submit()">Submit</button>
-    </div>
-
-    <div class="question"  id="Q9">
-        <div class="questiontitle">9:  Who was the person who coined the word torque?</div>
-        <input type="radio" class="question9" name="person" value="1" id="LBJ">
-        <label for="LBJ">Linden B Johnson</label><br>
-        <input type="radio" class="question9" name="person" value="0" id="JT">
-        <label for="JT">James Thomson</label><br>
-        <input type="radio" class="question9" name="person" value="1" id="NT">
-        <label for="NT">Nikola Tesla</label><br>
-        <input type="radio" class="question9" name="person" value="1" id="KFB">
-        <label for="KFB">Karl Ferdinand Braun</label><br>
-        <button class="submit" onclick="submit()">Submit</button>
-    </div>
-
-    <div class="question"  id="Q10">
-        <div class="questiontitle">10: What does the term, arca archa ,in latin most closely mean in english?</div>
-        <input type="radio" class="question10" name="meaning" value="1" id="Winged">
-        <label for="Winged">Winged Animal</label><br>
-        <input type="radio" class="question10" name="meaning" value="1" id="Fruit">
-        <label for="Fruit">Fruit Tree</label><br>
-        <input type="radio" class="question10" name="meaning" value="0" id="Container">
-        <label for="Container">Container</label><br>
-        <input type="radio" class="question10" name="meaning" value="1" id="Green">
-        <label for="Green">Green</label><br>
-        <button class="submit" onclick="submit()">Submit</button>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="quiz.js"></script>
+  <script src="quiz.js"></script>
 </body>
 </html>
