@@ -54,6 +54,7 @@ const quizquestions = [
 const questionElement = document.getElementById("question");
 const optionsElement = document.getElementById("options");
 const submitButton = document.getElementById("submit");
+const resetButton = document.getElementById("reset");
 let currentQuestion = 0;
 let score = 0;
 
@@ -109,7 +110,8 @@ function showResult() {
       <h1>Your score: ${score}/${quizquestions.length}</h1>
     `;
     optionsElement.innerHTML = ""; 
-    submitButton.style.display = "none"; 
+    submitButton.style.display = "none";
+    resetButton.style.display = "inline";
 }
 
 function start(){
@@ -117,8 +119,19 @@ function start(){
     optionsElement.style.display = "block"
     submitButton.style.display = "block"
     document.getElementById("start").style.display = "none"
-    document.getElementById("reset").style.display = "inline"
 }
+
+function resetQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    submitButton.style.display = "inline"; 
+    resetButton.style.display = "none"; 
+    showQuestion();
+}
+
+submitButton.addEventListener("click", selectAnswer);
+resetButton.addEventListener("click", resetQuiz);
+
 showQuestion();
 
 
