@@ -1,4 +1,3 @@
-
 const quizquestions = [
     {
         question: "1: What is 19+17?",
@@ -108,7 +107,7 @@ function selectAnswer() {
 function showResult() {
     questionElement.innerHTML = `
       <h1>Quiz completed</h1>
-      <p>Your score: ${score}/${quizquestions.length}</p>
+      <h1>Your score: ${score}/${quizquestions.length}</h1>
     `;
     optionsElement.innerHTML = ""; 
     submitButton.style.display = "none";
@@ -132,6 +131,7 @@ function resetQuiz() {
 
 submitButton.addEventListener("click", selectAnswer);
 resetButton.addEventListener("click", resetQuiz);
+
 showQuestion();
 
 
