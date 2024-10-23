@@ -28,7 +28,6 @@ label{
 #quiz{
     display: flex;
     flex-direction: column;
-    
 }
 #question{
     display: none;
@@ -51,9 +50,4 @@ label{
     margin: auto;
     font-size: 50px;
     padding: 15px;
-}
-#reset{
-    display: none;
-    width: fit-content;
-    
 }
