@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("https://th.bing.com/th/id/R.9e368d13d05df97f8de0a401a89b3168?rik=nGrPe7np0bxULg&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2fe%2f9%2fb%2f1085668-best-simple-backgrounds-2490x1402-notebook.jpg&ehk=VAtr%2bthk46SmqH0MceKsy%2feyt3Kola3GsQZWn97cnuI%3d&risl=&pid=ImgRaw&r=0");
+    margin-left: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+h1{
+    width: fit-content;
+    margin: auto;
+    font-size: 50px;
+    padding-bottom: 50px;
+}
+input{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 10px;
+}
+label{
+    font-size: 40px;
+}
+#quiz{
+    display: flex;
+    flex-direction: column;
+}
+#question{
+    display: none;
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+#options{
+    display: none;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+#submit{
+    display: none;
+    width: fit-content;
+    font-size: 25px;
+    padding: 15px;
+    border-radius: 25px;
+}
+#start{
+    width: fit-content;
+    margin: auto;
+    font-size: 50px;
+    padding: 15px;
+}
+#reset{
+    width: auto;
+    margin: auto;
+    font-size: 50px;
+    padding: 15px;
+}
