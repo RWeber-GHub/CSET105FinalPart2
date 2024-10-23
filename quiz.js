@@ -115,7 +115,16 @@ function showResult() {
     resetButton.style.display = "inline";
 }
 
+function resetQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    submitButton.style.display = "inline"; 
+    resetButton.style.display = "none"; 
+    showQuestion();
+}
 
+submitButton.addEventListener("click", selectAnswer);
+resetButton.addEventListener("click", resetQuiz);
 showQuestion();
 
 
