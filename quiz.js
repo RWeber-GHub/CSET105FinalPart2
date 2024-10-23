@@ -115,6 +115,13 @@ function showResult() {
     resetButton.style.display = "inline";
 }
 
+function start(){
+    questionElement.style.display = "block"
+    optionsElement.style.display = "block"
+    submitButton.style.display = "block"
+    document.getElementById("start").style.display = "none"
+}
+
 function resetQuiz() {
     currentQuestion = 0;
     score = 0;
