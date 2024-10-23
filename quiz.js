@@ -55,6 +55,7 @@ const quizquestions = [
 const questionElement = document.getElementById("question");
 const optionsElement = document.getElementById("options");
 const submitButton = document.getElementById("submit");
+const resetButton = document.getElementById("reset");
 let currentQuestion = 0;
 let score = 0;
 
@@ -110,7 +111,8 @@ function showResult() {
       <p>Your score: ${score}/${quizquestions.length}</p>
     `;
     optionsElement.innerHTML = ""; 
-    submitButton.style.display = "none"; 
+    submitButton.style.display = "none";
+    resetButton.style.display = "inline";
 }
 
 
