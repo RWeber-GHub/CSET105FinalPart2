@@ -1,4 +1,3 @@
-
 const quizquestions = [
     {
         question: "1: What is 19+17?",
@@ -113,7 +112,13 @@ function showResult() {
     submitButton.style.display = "none"; 
 }
 
-
+function start(){
+    questionElement.style.display = "block"
+    optionsElement.style.display = "block"
+    submitButton.style.display = "block"
+    document.getElementById("start").style.display = "none"
+    document.getElementById("reset").style.display = "inline"
+}
 showQuestion();
 
 
