@@ -106,7 +106,7 @@ function selectAnswer() {
 
 function showResult() {
     questionElement.innerHTML = `
-      <h1>Quiz completed</h1>
+      <h1>Quiz completed!</h1>
       <h1>Your score: ${score}/${quizquestions.length}</h1>
     `;
     optionsElement.innerHTML = ""; 
